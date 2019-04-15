@@ -18,7 +18,7 @@ Shields4J:
     when: always
     expire_in: 30 day
     paths:
-      - "*/target/reports"
+      - "target/reports"
 
 Sonar review:
   stage: verify
