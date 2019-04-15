@@ -10,14 +10,12 @@ $(eval $(VERSION):;@:)
 clean:
 	mvn clean
 
-# do not use -Dmaven.test.skip=true
-install: clean
-	mvn install -DskipTests
+build: clean
+	mvn package
 
 test: clean
 	mvn test
 
-# do not use -Dmaven.test.skip=true
 deploy: clean
 	mvn deploy -Dperform-touchbit-release
 
