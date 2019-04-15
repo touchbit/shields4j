@@ -29,10 +29,10 @@
 
     <groupId>org.touchbit.utils</groupId>
     <artifactId>shields4j</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
 
-    <name>shields4j</name>
+    <name>Shields4J</name>
     <url>https://gitlab.com/TouchBIT/shields4j</url>
     <description>shields.io java client</description>
 
@@ -81,7 +81,7 @@
         <junit.report>${project.build.directory}/report/junit-report</junit.report>
         <jacoco.report>${project.build.directory}/report/jacoco.exec</jacoco.report>
 
-        <sonar.gitlab.project_id>8282105</sonar.gitlab.project_id>
+        <sonar.gitlab.project_id>11857541</sonar.gitlab.project_id>
         <sonar.sources>src/main</sonar.sources>
         <sonar.host.url>https://touchbit.org/sonar/</sonar.host.url>
         <sonar.projectKey>${project.groupId}:shields4j</sonar.projectKey>
@@ -89,59 +89,15 @@
         <reports.path>${project.build.directory}/reports</reports.path>
         <sonar.junit.reportPaths>${reports.path}</sonar.junit.reportPaths>
         <sonar.jacoco.reportPaths>${reports.path}/jacoco.exec</sonar.jacoco.reportPaths>
-        <sonar.skippedModules>integration, model4jackson2, model4gson</sonar.skippedModules>
-        <shields4j.sonar.exclusions>
-            *.xml,
-            src/main/java/org/touchbit/shields4j/**/model/*,
-            src/main/java/org/touchbit/shields4j/**/model/**/*
-        </shields4j.sonar.exclusions>
-        <sonar.exclusions>${shields4j.sonar.exclusions}</sonar.exclusions>
-        <sonar.coverage.exclusions>${shields4j.sonar.exclusions}</sonar.coverage.exclusions>
-        <sonar.cpd.exclusions>src/main/java/org/touchbit/shields4j/**/feign/client/*</sonar.cpd.exclusions>
-        <model.annotation.lib>none</model.annotation.lib>
+        <sonar.skippedModules/>
+        <sonar.exclusions/>
+        <sonar.coverage.exclusions/>
+        <sonar.cpd.exclusions/>
 
-        <gson.version>2.8.5</gson.version>
-        <feign.version>10.1.0</feign.version>
-        <jackson.version>2.9.7</jackson.version>
         <junit.jupiter.version>5.3.1</junit.jupiter.version>
-        <commons.lang3.version>3.8.1</commons.lang3.version>
     </properties>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/io.github.openfeign -->
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-core</artifactId>
-            <version>${feign.version}</version>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>io.github.openfeign</groupId>-->
-            <!--<artifactId>feign-jackson</artifactId>-->
-            <!--<version>${feign.version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>io.github.openfeign</groupId>-->
-            <!--<artifactId>feign-gson</artifactId>-->
-            <!--<version>${feign.version}</version>-->
-        <!--</dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons.lang3.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -150,7 +106,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.3.1</version>
+            <version>${junit.jupiter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -234,17 +190,6 @@
                                 <destFile>${sonar.jacoco.reportPaths}</destFile>
                             </configuration>
                         </execution>
-                        <execution>
-                            <id>report</id>
-                            <phase>prepare-package</phase>
-                            <goals>
-                                <goal>report</goal>
-                            </goals>
-                            <configuration>
-                                <dataFile>${sonar.jacoco.reportPaths}</dataFile>
-                                <outputDirectory>${reports.path}/jacoco</outputDirectory>
-                            </configuration>
-                        </execution>
                     </executions>
                 </plugin>
                 <plugin>
@@ -261,33 +206,6 @@
                         <target>${jdk.version}</target>
                         <encoding>${source.encoding}</encoding>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.jsonschema2pojo</groupId>
-                    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-                    <version>0.5.1</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>generate</goal>
-                            </goals>
-                            <configuration>
-                                <!--suppress UnresolvedMavenProperty -->
-                                <sourceDirectory>
-                                    ${project.parent.basedir}/shields4j-schema/src/main/resources/schema
-                                </sourceDirectory>
-                                <outputDirectory>src/main/java</outputDirectory>
-                                <targetPackage>org.touchbit.shields4j.${model.annotation.lib}.model</targetPackage>
-                                <useCommonsLang3>true</useCommonsLang3>
-                                <generateBuilders>true</generateBuilders>
-                                <includeConstructors>true</includeConstructors>
-                                <annotationStyle>${model.annotation.lib}</annotationStyle>
-                                <removeOldOutput>true</removeOldOutput>
-                                <useLongIntegers>true</useLongIntegers>
-                                <includeAdditionalProperties>true</includeAdditionalProperties>
-                            </configuration>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -398,17 +316,6 @@
                             <configuration>
                                 <sourceFile>${project.basedir}/LICENSE.rst</sourceFile>
                                 <destinationFile>${project.basedir}/docs/LICENSE.rst</destinationFile>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>copy-readme</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>copy</goal>
-                            </goals>
-                            <configuration>
-                                <sourceFile>${project.basedir}/README.rst</sourceFile>
-                                <destinationFile>${project.basedir}/docs/index.rst</destinationFile>
                             </configuration>
                         </execution>
                     </executions>
