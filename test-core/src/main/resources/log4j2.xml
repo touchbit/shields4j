@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <properties>
+        <property name="base.log.pattern">%d{HH:mm:ss.SSS} [%17t] - %m%n</property>
+    </properties>
+    <Appenders>
+        <File name="Client" fileName="target/logs/client.log">
+            <PatternLayout pattern="${base.log.pattern}"/>
+        </File>
+        <File name="TestNG" fileName="target/logs/testng.log">
+            <PatternLayout pattern="${base.log.pattern}"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.touchbit.shields4j.client" level="all" additivity="false">
+            <AppenderRef ref="Client"/>
+        </Logger>
+        <Logger name="org.touchbit.shields4j.testng" level="all" additivity="false">
+            <AppenderRef ref="TestNG"/>
+        </Logger>
+    </Loggers>
+</Configuration>
