@@ -19,8 +19,12 @@ Add IShieldsListener to testNG |iteststotal| |itestssuccesspercent|
 
 .. code:: java
 
-    TestNG testNG = new TestNG();
-    testNG.addListener(new IShieldsListener());
+    class Example {
+        public static void main (String[] arg) {
+             TestNG testNG = new TestNG();
+             testNG.addListener(new IShieldsListener());
+        }
+    }
 
 or add IShieldsListener in your testng.xml file
 
