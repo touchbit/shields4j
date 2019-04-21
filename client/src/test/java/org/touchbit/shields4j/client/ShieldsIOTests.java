@@ -199,7 +199,7 @@ class ShieldsIOTests extends BaseUnitTest {
     void unitTest_20190417202536() throws IOException {
         ShieldsIO shieldsIO = new ShieldsIO("http://localhost:12345/")
                 .withMessage("withMessage")
-                .withBase64Logo(new File("../docs/img/status_success.svg"));
+                .withBase64Logo(new File("../.docs/img/status_success.svg"));
         assertThat(shieldsIO.getShieldUrl())
                 .contains("logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCAxNCIgaWQ9InN0YXR1c19zdWNjZXNzIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDdhNyA3IDAgMSAxIDE0IDBBNyA3IDAgMCAxIDAgN3oiPjwvcGF0aD48cGF0aCBkPSJNMTMgN0E2IDYgMCAxIDAgMSA3YTYgNiAwIDAgMCAxMiAweiIgZmlsbD0iI0ZGRiI%2BPC9wYXRoPjxwYXRoIGQ9Ik02LjI3OCA3LjY5N0w1LjA0NSA2LjQ2NGEuMjk2LjI5NiAwIDAgMC0uNDItLjAwMmwtLjYxMy42MTRhLjI5OC4yOTggMCAwIDAgLjAwMi40MmwxLjkxIDEuOTA5YS41LjUgMCAwIDAgLjcwMy4wMDVsLjI2NS0uMjY1TDkuOTk3IDYuMDRhLjI5MS4yOTEgMCAwIDAtLjAwOS0uNDA4bC0uNjE0LS42MTRhLjI5LjI5IDAgMCAwLS40MDgtLjAwOUw2LjI3OCA3LjY5N3oiPjwvcGF0aD48L2c%2BPC9zdmc%2B");
     }
@@ -242,6 +242,13 @@ class ShieldsIOTests extends BaseUnitTest {
                     }
                 });
         assertThat(shieldsIO.getShieldUrl()).isEqualTo("http://localhost:12345/");
+    }
+
+    @Test
+    @DisplayName("mkdirs() without parent directory")
+    void unitTest_20190420212944() {
+        ShieldsIO shieldsIO = new ShieldsIO();
+        shieldsIO.mkdirs(new File("test.tmp"));
     }
 
 }

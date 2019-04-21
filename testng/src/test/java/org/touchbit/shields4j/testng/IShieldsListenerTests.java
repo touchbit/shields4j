@@ -80,7 +80,7 @@ class IShieldsListenerTests extends BaseUnitTest {
     }
 
     @Test
-    @DisplayName("TestRailClient#")
+    @DisplayName("Write to file with custom label and file prefix")
     void unitTest_20190418001320() throws IOException {
         wireMockServer.stubFor(get("/?label=Integration&message=0&color=green")
                 .willReturn(aResponse().withHeader("Content-Type", "text/plain")

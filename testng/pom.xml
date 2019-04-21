@@ -28,13 +28,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>shields4j-parent</artifactId>
         <groupId>org.touchbit.shields4j</groupId>
-        <version>0.0.3</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>testng</artifactId>
+    <name>TestNG listener</name>
+    <description>TestNG listener to create badges with statistics on running tests</description>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -45,14 +49,13 @@
         <dependency>
             <groupId>org.touchbit.shields4j</groupId>
             <artifactId>client</artifactId>
-            <version>0.0.3</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.touchbit.shields4j</groupId>
             <artifactId>test-core</artifactId>
-            <version>0.0.3</version>
+            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>

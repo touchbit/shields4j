@@ -36,10 +36,21 @@ import java.util.Map;
  */
 public interface Parameters {
 
+    /**
+     * @return Map with request parameters
+     */
     Map<Parameter, String> get();
 
+    /**
+     * Add request parameter to Map
+     * @param parameter request parameter key represents {@link Parameter} object
+     * @param value request parameter {@link String} value
+     */
     void put(Parameter parameter, String value);
 
+    /**
+     * Validate request parameters
+     */
     void check();
 
 }

@@ -59,6 +59,10 @@ public class ShieldsIO {
         this("https://img.shields.io/static/v1.svg");
     }
 
+    /**
+     * @param url shields.io URL
+     * @exception IllegalArgumentException url can not be empty
+     */
     public ShieldsIO(final String url) {
         if (url != null && !url.isEmpty()) {
             this.url = url;
@@ -69,6 +73,9 @@ public class ShieldsIO {
 
     /**
      * HTTP client
+     * @param client HTTP client
+     * @exception IllegalArgumentException client can not be null
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withClient(Client client) {
         if (client == null) {
@@ -79,7 +86,9 @@ public class ShieldsIO {
     }
 
     /**
-     * HTTP request parameters map
+     * @param parameters HTTP request parameters map
+     * @exception IllegalArgumentException parameters can not be null
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withParameters(Parameters parameters) {
         if (parameters == null) {
@@ -90,7 +99,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Label text
+     * @param label Label text
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLabel(String label) {
         parameters.put(Parameter.LABEL, label);
@@ -98,14 +108,16 @@ public class ShieldsIO {
     }
 
     /**
-     * Label background color
+     * @param color Label background color
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLabelColor(Color color) {
         return withLabelColor(color.toString());
     }
 
     /**
-     * Label background color
+     * @param color Label background color
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLabelColor(String color) {
         parameters.put(Parameter.LABEL_COLOR, color);
@@ -113,7 +125,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Message text
+     * @param message Message text
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withMessage(String message) {
         parameters.put(Parameter.MESSAGE, message);
@@ -121,14 +134,16 @@ public class ShieldsIO {
     }
 
     /**
-     * Message background color
+     * @param color Message background color
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withMessageColor(Color color) {
         return withMessageColor(color.toString());
     }
 
     /**
-     * Message background color
+     * @param color Message background color
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withMessageColor(String color) {
         parameters.put(Parameter.COLOR, color);
@@ -136,7 +151,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Flat is the default.
+     * @param style shield style (Flat is the default).
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withStyle(Style style) {
         parameters.put(Parameter.STYLE, style.toString());
@@ -147,6 +163,8 @@ public class ShieldsIO {
      * Insert one of the named logos from (bitcoin, dependabot, discord, gitlab, npm, paypal, serverfault,
      * stackexchange, superuser, telegram, travis) or simple-icons. Simple-icons are referenced using names as
      * they appear on the simple-icons site.
+     * @param logo shield logo
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogo(Logo logo) {
         return withLogo(logo.toString());
@@ -156,6 +174,8 @@ public class ShieldsIO {
      * Insert one of the named logos from (bitcoin, dependabot, discord, gitlab, npm, paypal, serverfault,
      * stackexchange, superuser, telegram, travis) or simple-icons. Simple-icons are referenced using names as
      * they appear on the simple-icons site.
+     * @param logo shield logo name
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogo(String logo) {
         parameters.put(Parameter.LOGO, logo);
@@ -163,14 +183,16 @@ public class ShieldsIO {
     }
 
     /**
-     * Set the color of the logo (hex, rgb, rgba, hsl, hsla and css named colors supported)
+     * @param color Set the color of the logo (hex, rgb, rgba, hsl, hsla and css named colors supported)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogoColor(Color color) {
         return withLogoColor(color.toString());
     }
 
     /**
-     * Set the color of the logo (hex, rgb, rgba, hsl, hsla and css named colors supported)
+     * @param color Set the color of the logo (hex, rgb, rgba, hsl, hsla and css named colors supported)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogoColor(String color) {
         parameters.put(Parameter.LOGO_COLOR, color);
@@ -178,7 +200,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Set the horizontal space to give to the logo
+     * @param width Set the horizontal space to give to the logo
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogoWidth(int width) {
         parameters.put(Parameter.LOGO_WIDTH, String.valueOf(width));
@@ -186,7 +209,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Specify what clicking on the left/right of a badge should do (esp. for social badge style)
+     * @param link Specify what clicking on the left/right of a badge should do (esp. for social badge style)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withLogoLink(String link) {
         parameters.put(Parameter.LINK, link);
@@ -194,7 +218,8 @@ public class ShieldsIO {
     }
 
     /**
-     * Insert custom svg+xml logo image (≥ 14px high)
+     * @param base64 Insert custom svg+xml logo image (≥ 14px high)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withBase64Logo(String base64) {
         parameters.put(Parameter.LOGO_BASE64, "data:image/svg+xml;base64," + base64);
@@ -202,16 +227,19 @@ public class ShieldsIO {
     }
 
     /**
-     * Set the HTTP cache lifetime (rules are applied to infer a default value on a per-badge basis,
+     * @param cache Set the HTTP cache lifetime (rules are applied to infer a default value on a per-badge basis,
      * any values specified below the default will be ignored).
+     * @return updated {@link ShieldsIO} object
      */
-    public ShieldsIO withCacheSeconds(int width) {
-        parameters.put(Parameter.CACHE_SECONDS, String.valueOf(width));
+    public ShieldsIO withCacheSeconds(int cache) {
+        parameters.put(Parameter.CACHE_SECONDS, String.valueOf(cache));
         return this;
     }
 
     /**
-     * Insert custom logo image (≥ 14px high)
+     * @param file Insert custom logo image file (≥ 14px high)
+     * @exception IOException that occur when error read from file
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withBase64Logo(File file) throws IOException {
         try (FileInputStream reader = new FileInputStream(file)) {
@@ -229,8 +257,9 @@ public class ShieldsIO {
     }
 
     /**
-     * Ignore exceptions that occur when making requests to shields.io or write to file
+     * @param ignoreExceptions Ignore exceptions that occur when making requests to shields.io or write to file
      * (if an error occurs watch log)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withIgnoreExceptions(boolean ignoreExceptions) {
         this.ignoreExceptions = ignoreExceptions;
@@ -240,6 +269,7 @@ public class ShieldsIO {
     /**
      * Ignore exceptions that occur when making requests to shields.io or write to file
      * (if an error occurs watch log)
+     * @return updated {@link ShieldsIO} object
      */
     public ShieldsIO withIgnoreExceptions() {
         return withIgnoreExceptions(true);
@@ -260,6 +290,10 @@ public class ShieldsIO {
         return shieldUrl;
     }
 
+    /**
+     * @return shield body (xml)
+     * @exception IOException that occur when error call HTTP request
+     */
     public String getShield() throws IOException {
         try {
             return client.get(getShieldUrl());
@@ -274,12 +308,13 @@ public class ShieldsIO {
         }
     }
 
+    /**
+     * @param path write shield to specify file
+     * @exception IOException that occur when error call HTTP request or write shield to file
+     */
     public void writeShieldToFile(String path) throws IOException {
         File file = new File(path);
-        if (!file.getParentFile().exists()) {
-            //noinspection ResultOfMethodCallIgnored
-            file.getParentFile().mkdirs();
-        }
+        mkdirs(file);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             String shield = getShield();
             writer.write(shield);
@@ -289,6 +324,13 @@ public class ShieldsIO {
                 return;
             }
             throw e;
+        }
+    }
+
+    public void mkdirs(File file) {
+        if (file.getParentFile()!= null && !file.getParentFile().exists()) {
+            //noinspection ResultOfMethodCallIgnored
+            file.getParentFile().mkdirs();
         }
     }
 

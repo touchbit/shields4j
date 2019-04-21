@@ -40,15 +40,29 @@ public class ParametersImpl implements Parameters {
 
     private Map<Parameter, String> urlParameters = new EnumMap<>(Parameter.class);
 
+    /**
+     * @return Map with request parameters
+     */
+    @Override
     public Map<Parameter, String> get() {
         return urlParameters;
     }
 
+    /**
+     * Add request parameter to Map
+     * @param parameter request parameter key represents {@link Parameter} object
+     * @param value request parameter {@link String} value
+     */
     @Override
     public void put(Parameter parameter, String value) {
         urlParameters.put(parameter, value);
     }
 
+    /**
+     * Validate request parameters
+     * @exception IllegalArgumentException if parameters has invalid condition
+     */
+    @Override
     public void check() {
         if (urlParameters.get(Parameter.MESSAGE) == null || urlParameters.get(Parameter.MESSAGE).isEmpty()) {
             throw new IllegalArgumentException("Parameter " + Parameter.MESSAGE + " is required.");

@@ -44,11 +44,23 @@ public class ClientImpl implements Client {
 
     private final Logger log = LoggerFactory.getLogger(ClientImpl.class);
 
+    /**
+     * shields.io GET request
+     * @param url full url to shields.io badge
+     * @return badge body
+     * @exception IOException that occur when error call HTTP request
+     */
     @Override
     public String get(final String url) throws IOException {
         return get(new URL(url));
     }
 
+    /**
+     * shields.io GET request
+     * @param url full url to shields.io badge
+     * @return badge body
+     * @exception IOException that occur when error call HTTP request
+     */
     @Override
     public String get(final URL url) throws IOException {
         final URLConnection con = url.openConnection();
