@@ -17,6 +17,11 @@
 
     <url>https://gitlab.com/TouchBIT/shields4j</url>
 
+    <organization>
+        <name>TouchBIT</name>
+        <url>https://touchbit.org/</url>
+    </organization>
+
     <issueManagement>
         <url>https://gitlab.com/TouchBIT/shields4j/issues</url>
         <system>GitLab</system>
@@ -46,6 +51,7 @@
                 <role>Owner</role>
             </roles>
             <timezone>+3</timezone>
+            <organization>TouchBIT</organization>
         </developer>
     </developers>
 
