@@ -51,7 +51,6 @@ public abstract class BaseUnitTest {
         wireMockServer.start();
     }
 
-
     @BeforeAll
     static void clear() {
         File folder = new File(BADGES_PATH);

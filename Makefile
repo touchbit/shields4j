@@ -17,14 +17,14 @@ test: clean
 	mvn test
 
 deploy: clean
-	mvn deploy -Dperform-touchbit-release
+	mvn deploy -DskipTests=true
 
 deploy-st: clean
 	mvn deploy -Dperform-sonatype-release
 
 version:
 	mvn versions:set -DnewVersion=${VERSION}
-	mvn install -DskipTests
+	mvn package -DskipTests
 
 ver: version
 

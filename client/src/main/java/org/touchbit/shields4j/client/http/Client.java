@@ -36,8 +36,20 @@ import java.net.URL;
  */
 public interface Client {
 
+    /**
+     * shields.io GET request
+     * @param url full url to shields.io badge
+     * @return badge body
+     * @exception IOException that occur when error call HTTP request
+     */
     String get(String url) throws IOException;
 
+    /**
+     * shields.io GET request
+     * @param url full url to shields.io badge
+     * @return badge body
+     * @exception IOException that occur when error call HTTP request
+     */
     String get(URL url) throws IOException;
 
 }

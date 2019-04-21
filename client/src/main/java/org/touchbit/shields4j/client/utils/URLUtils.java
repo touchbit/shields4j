@@ -36,10 +36,26 @@ import java.nio.charset.StandardCharsets;
 @SuppressWarnings("WeakerAccess")
 public class URLUtils {
 
+    /**
+     * See {@link URLUtils#encode(String, String)}
+     * @param value {@code String} to be translated.
+     * @return  the translated {@code String}.
+     */
     public static String encode(String value) {
         return encode(value, StandardCharsets.UTF_8.toString());
     }
 
+    /**
+     * Translates a string into {@code application/x-www-form-urlencoded}
+     * format using a specific encoding scheme. This method uses the
+     * supplied encoding scheme to obtain the bytes for unsafe
+     * characters.
+     * <p>
+     * Note {@link UnsupportedEncodingException} suppressed
+     * @param value {@code String} to be translated.
+     * @param charset The name of a supported character encoding.
+     * @return  the translated {@code String}.
+     */
     public static String encode(String value, String charset) {
         try {
             return URLEncoder.encode(value, charset);
@@ -48,6 +64,7 @@ public class URLUtils {
         }
     }
 
+    /** Utility class. */
     private URLUtils() { }
 
 }

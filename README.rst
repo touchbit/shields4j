@@ -51,6 +51,17 @@ Add dependency
         <version>${shields4j.version}</version>
     </dependency>
 
+If you need to get Shields4j versions that are not uploaded to maven central (snapshot/staging), add the Sonatype repository to your pom.xml
+
+.. code:: xml
+
+    <repositories>
+        <repository>
+            <id>SonatypeNexus</id>
+            <url>https://oss.sonatype.org/content/groups/staging/</url>
+        </repository>
+    </repositories>
+
 Minimal |minimal|
 
 .. |minimal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/minimal.svg

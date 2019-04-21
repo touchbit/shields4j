@@ -36,6 +36,8 @@ import org.touchbit.shields4j.client.http.model.Color;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * A listener for test running.
+ *
  * Created by Oleg Shaburov on 15.04.2019
  * shaburov.o.a@gmail.com
  */
@@ -57,20 +59,35 @@ public class IShieldsListener implements ITestListener, IExecutionListener {
         this(new ShieldsIO());
     }
 
+    /**
+     * @param shieldsIO - ShieldsIO client
+     */
     public IShieldsListener(final ShieldsIO shieldsIO) {
         this.shieldsIO = shieldsIO;
     }
 
+    /**
+     * @param labelPrefix prefix for result badge label. iTests by default.
+     * @return updated {@link IShieldsListener} object
+     */
     public IShieldsListener withLabelPefix(final String labelPrefix) {
         this.labelPrefix = labelPrefix;
         return this;
     }
 
+    /**
+     * @param filePrefix prefix for file name. TestNG by default.
+     * @return updated {@link IShieldsListener} object
+     */
     public IShieldsListener withFilePefix(final String filePrefix) {
         this.filePrefix = filePrefix;
         return this;
     }
 
+    /**
+     * @param path - badges directory (for save)
+     * @return updated {@link IShieldsListener} object
+     */
     public IShieldsListener withPath(final String path) {
         this.path = path;
         return this;
@@ -110,6 +127,9 @@ public class IShieldsListener implements ITestListener, IExecutionListener {
         writeSuccessPercent();
     }
 
+    /**
+     * Create a badge with tests total count
+     */
     public void writeTotal() {
         try {
             shieldsIO
@@ -122,10 +142,13 @@ public class IShieldsListener implements ITestListener, IExecutionListener {
         }
     }
 
+    /**
+     * Create a badge with a tests success percentage
+     */
     public void writeSuccessPercent() {
         int successPercent = 100;
         if (getTotal() != 0) {
-            successPercent = successTests.get() * 100 / getTotal();
+            successPercent = successTests.get() * 100 / (getTotal() - skippedTests.get());
         }
         try {
             shieldsIO
