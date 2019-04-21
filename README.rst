@@ -1,7 +1,7 @@
 Shields4j |MavenCentral| |SourceGitLab|
 =======================================
 
-.. |MavenCentral| image:: https://maven-badges.herokuapp.com/maven-central/org.touchbit.utils/shields4j/badge.svg?style=plastic
+.. |MavenCentral| image:: https://maven-badges.herokuapp.com/maven-central/org.touchbit.shields4j/shields4j-parent/badge.svg?style=plastic
     :target: https://mvnrepository.com/artifact/org.touchbit.shields4j
 
 .. |SourceGitLab| image:: https://img.shields.io/badge/Source-GitLab-blue.svg?style=plastic
