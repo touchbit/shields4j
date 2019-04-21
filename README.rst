@@ -64,7 +64,7 @@ If you need to get Shields4j versions that are not uploaded to maven central (sn
 
 Minimal |minimal|
 
-.. |minimal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/minimal.svg
+.. |minimal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/minimal.svg
 
 .. code:: java
 
@@ -79,7 +79,7 @@ Minimal |minimal|
 
 With logo and color background |withlogo|
 
-.. |withlogo| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/with-logo.svg
+.. |withlogo| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/with-logo.svg
 
 .. code:: java
 
@@ -100,7 +100,7 @@ With logo and color background |withlogo|
 
 With custom logo and color background |withcustomlogo|
 
-.. |withcustomlogo| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/with-custom-logo.svg
+.. |withcustomlogo| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/with-custom-logo.svg
 
 .. code:: java
 
@@ -132,9 +132,9 @@ Add dependency
 
 Add IShieldsListener to testNG |iteststotal| |itestssuccesspercent|
 
-.. |iteststotal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/TestNG-iTests-total.svg
+.. |iteststotal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/TestNG-iTests-total.svg
 
-.. |itestssuccesspercent| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/TestNG-iTests-success-percent.svg
+.. |itestssuccesspercent| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/TestNG-iTests-success-percent.svg
 
 .. code:: java
 
@@ -157,9 +157,9 @@ or add IShieldsListener in your testng.xml file
 
 To customize the prefixes, create your own listener inherited from IShieldsListener |integrationtesttotal| |integrationtestsuccesspercent|
 
-.. |integrationtesttotal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/testng-Integration-test-total.svg
+.. |integrationtesttotal| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/testng-Integration-test-total.svg
 
-.. |integrationtestsuccesspercent| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/docs/img/testng-Integration-test-success-percent.svg
+.. |integrationtestsuccesspercent| image:: https://gitlab.com/TouchBIT/shields4j/raw/master/.docs/img/testng-Integration-test-success-percent.svg
 
 .. code:: java
 
