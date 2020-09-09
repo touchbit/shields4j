@@ -9,7 +9,7 @@ Shields4j |MavenCentral| |SourceGitLab|
 
 |Master| |DocumentationStatus| |AlertStatus| |Coverage|
 
-.. |Master| image:: https://github.com/touchbit/shields4j/workflows/master/badge.svg?event=status
+.. |Master| image:: https://github.com/touchbit/shields4j/workflows/Master/badge.svg
     :target: https://github.com/touchbit/shields4j/actions?query=workflow%3Amaster
 
 .. |DocumentationStatus| image:: https://readthedocs.org/projects/shields4j/badge/?version=master
