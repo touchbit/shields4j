@@ -9,8 +9,8 @@ Shields4j |MavenCentral| |SourceGitLab|
 
 |Master| |DocumentationStatus| |AlertStatus| |Coverage|
 
-.. |Master| image:: https://gitlab.com/TouchBIT/shields4j/badges/master/build.svg
-    :target: https://gitlab.com/TouchBIT/shields4j/pipelines
+.. |Master| image:: https://github.com/touchbit/shields4j/workflows/master/badge.svg?event=status
+    :target: https://github.com/touchbit/shields4j/actions?query=workflow%3Amaster
 
 .. |DocumentationStatus| image:: https://readthedocs.org/projects/shields4j/badge/?version=master
     :target: https://shields4j.readthedocs.io

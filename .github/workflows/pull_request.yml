@@ -1,9 +1,9 @@
-name: PR
+name: Pull Request
 
 on:
   pull_request:
     branches:
-      - master
+      - 'master'
 
 jobs:
   verify:
@@ -25,5 +25,5 @@ jobs:
       - name: Run sonar
         run: mvn package sonar:sonar -DskipTests=true
         env:
-          GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
+          GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
           SONAR_GH_CI_TOKEN: ${{ secrets.SONAR_GH_CI_TOKEN }}
