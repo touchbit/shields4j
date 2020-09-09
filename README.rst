@@ -7,7 +7,7 @@ Shields4j |MavenCentral| |SourceGitLab|
 .. |SourceGitLab| image:: https://img.shields.io/badge/Source-GitLab-blue.svg?style=plastic
     :target: https://gitlab.com/TouchBIT/shields4j
 
-|Master| |DocumentationStatus| |AlertStatus| |Coverage| |Tests| |TestSuccessDensity|
+|Master| |DocumentationStatus| |AlertStatus| |Coverage|
 
 .. |Master| image:: https://gitlab.com/TouchBIT/shields4j/badges/master/build.svg
     :target: https://gitlab.com/TouchBIT/shields4j/pipelines
@@ -15,17 +15,11 @@ Shields4j |MavenCentral| |SourceGitLab|
 .. |DocumentationStatus| image:: https://readthedocs.org/projects/shields4j/badge/?version=master
     :target: https://shields4j.readthedocs.io
 
-.. |AlertStatus| image:: https://touchbit.org/sonar/api/project_badges/measure?project=org.touchbit.shields4j%3Ashields4j-parent&metric=alert_status
-    :target: https://touchbit.org/sonar/dashboard?id=org.touchbit.shields4j%3Ashields4j-parent
+.. |AlertStatus| image:: https://sonarcloud.io/api/project_badges/measure?project=org.touchbit.shields4j%3Ashields4j-parent&metric=alert_status
+    :target: https://sonarcloud.io/dashboard?id=org.touchbit.shields4j%3Ashields4j-parent
 
-.. |Coverage| image:: https://touchbit.org/sonar/api/badges/measure?key=org.touchbit.shields4j%3Ashields4j-parent&metric=coverage&blinking=true
-    :target: https://touchbit.org/sonar/component_measures?id=org.touchbit.shields4j%3Ashields4j-parent&metric=coverage
-
-.. |Tests| image:: https://touchbit.org/sonar/api/badges/measure?key=org.touchbit.shields4j%3Ashields4j-parent&metric=tests&blinking=true
-    :target: https://touchbit.org/sonar/component_measures?id=org.touchbit.shields4j%3Ashields4j-parent&metric=tests
-
-.. |TestSuccessDensity| image:: https://touchbit.org/sonar/api/badges/measure?key=org.touchbit.shields4j%3Ashields4j-parent&blinking=true&metric=test_success_density
-    :target: https://touchbit.org/sonar/component_measures?id=org.touchbit.shields4j%3Ashields4j-parent&metric=tests
+.. |Coverage| image:: https://sonarcloud.io/api/project_badges/measure?project=org.touchbit.shields4j%3Ashields4j-parent&metric=coverage&blinking=true
+    :target: https://sonarcloud.io/component_measures?id=org.touchbit.shields4j%3Ashields4j-parent&metric=coverage
 
 Lightweight java HTTP-client for the `shields.io`_ service.
 
