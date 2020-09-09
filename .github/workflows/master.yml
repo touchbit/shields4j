@@ -6,6 +6,10 @@ on:
       - 'master'
     tags-ignore:
       - '*'
+    paths-ignore:
+      - README.rst
+      - LICENSE.rst
+      - Makefile
 
 jobs:
   verify:

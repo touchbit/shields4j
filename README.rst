@@ -1,16 +1,11 @@
-Shields4j |MavenCentral| |SourceGitLab|
+Shields4j |Master| |MavenCentral| |DocumentationStatus| |AlertStatus| |Coverage|
 =======================================
+
+.. |Master| image:: https://github.com/touchbit/shields4j/workflows/Master/badge.svg?style=plastic
+    :target: https://github.com/touchbit/shields4j/actions?query=workflow%3Amaster
 
 .. |MavenCentral| image:: https://maven-badges.herokuapp.com/maven-central/org.touchbit.shields4j/shields4j-parent/badge.svg?style=plastic
     :target: https://mvnrepository.com/artifact/org.touchbit.shields4j
-
-.. |SourceGitLab| image:: https://img.shields.io/badge/Source-GitLab-blue.svg?style=plastic
-    :target: https://gitlab.com/TouchBIT/shields4j
-
-|Master| |DocumentationStatus| |AlertStatus| |Coverage|
-
-.. |Master| image:: https://github.com/touchbit/shields4j/workflows/Master/badge.svg
-    :target: https://github.com/touchbit/shields4j/actions?query=workflow%3Amaster
 
 .. |DocumentationStatus| image:: https://readthedocs.org/projects/shields4j/badge/?version=master
     :target: https://shields4j.readthedocs.io
