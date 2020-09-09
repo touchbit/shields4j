@@ -23,6 +23,6 @@ jobs:
       - name: Run tests
         run: mvn clean test
       - name: Run sonar
-        run: mvn package sonar:sonar -DskipTests=true
         env:
           SONAR_GH_CI_TOKEN: ${{ secrets.SONAR_GH_CI_TOKEN }}
+        run: mvn package sonar:sonar -DskipTests=true
