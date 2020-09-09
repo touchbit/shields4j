@@ -36,5 +36,8 @@ if on_rtd:
 html_theme_options = {
     'logo_only': True,
     'collapse_navigation': False,
+    'sticky_navigation': True,
     'display_version': True,
+    'includehidden': True,
+    'titles_only': False
 }

@@ -35,7 +35,7 @@ build-doc: clean-doc
 	sphinx-build -W -b html ./docs ./site
 
 build-doc-image:
-	docker build --no-cache -t shields4j/doc:${VERSION} -f ./.indirect/docs/Dockerfile .
+	docker build --no-cache -t shields4j/doc:${VERSION} -f .docs/Dockerfile .
 
 run-doc-image: build-doc-image
 	docker run -p 8080:80 shields4j/doc:${VERSION}
