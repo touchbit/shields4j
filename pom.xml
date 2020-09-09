@@ -79,14 +79,6 @@
         <sonar.cpd.exclusions/>
         <sonar.pullrequest.provider>github</sonar.pullrequest.provider>
         <sonar.pullrequest.github.repository>https://github.com/touchbit/shields4j</sonar.pullrequest.github.repository>
-        <!--suppress UnresolvedMavenProperty -->
-        <sonar.login>${env.SONAR_GH_CI_TOKEN}</sonar.login>
-        <!--suppress UnresolvedMavenProperty -->
-        <sonar.pullrequest.key>${env.GITHUB_PR_NUMBER}</sonar.pullrequest.key>
-        <!--suppress UnresolvedMavenProperty -->
-        <sonar.pullrequest.branch>${env.GITHUB_HEAD_REF}</sonar.pullrequest.branch>
-        <!--suppress UnresolvedMavenProperty -->
-        <sonar.pullrequest.base>${env.GITHUB_BASE_REF}</sonar.pullrequest.base>
     </properties>
 
     <dependencies>
