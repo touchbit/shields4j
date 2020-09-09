@@ -15,7 +15,7 @@
         <module>test-core</module>
     </modules>
 
-    <url>https://gitlab.com/TouchBIT/shields4j</url>
+    <url>https://github.com/touchbit/shields4j</url>
 
     <organization>
         <name>TouchBIT</name>
@@ -23,8 +23,8 @@
     </organization>
 
     <issueManagement>
-        <url>https://gitlab.com/TouchBIT/shields4j/issues</url>
-        <system>GitLab</system>
+        <url>https://github.com/touchbit/shields4j/issues</url>
+        <system>GitHub</system>
     </issueManagement>
 
     <licenses>
@@ -37,9 +37,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@gitlab.com:TouchBIT/shields4j.git</connection>
-        <developerConnection>scm:git:git@gitlab.com:TouchBIT/shields4j.git</developerConnection>
-        <url>https://gitlab.com/TouchBIT/shields4j</url>
+        <connection>scm:git:git@github.com:touchbit/shields4j.git</connection>
+        <developerConnection>scm:git:git@github.com:touchbit/shields4j.git</developerConnection>
+        <url>https://github.com/touchbit/shields4j</url>
     </scm>
 
     <developers>
@@ -65,23 +65,28 @@
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 
+        <junit.jupiter.version>5.3.1</junit.jupiter.version>
         <junit.report>${project.build.directory}/report/junit-report</junit.report>
-        <jacoco.report>${project.build.directory}/report/jacoco.exec</jacoco.report>
 
-        <sonar.gitlab.project_id>11857541</sonar.gitlab.project_id>
         <sonar.sources>src/main</sonar.sources>
-        <sonar.host.url>https://touchbit.org/sonar/</sonar.host.url>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>touchbit</sonar.organization>
         <sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <reports.path>${project.build.directory}/reports</reports.path>
-        <sonar.junit.reportPaths>${reports.path}</sonar.junit.reportPaths>
-        <sonar.jacoco.reportPaths>${reports.path}/jacoco.exec</sonar.jacoco.reportPaths>
         <sonar.skippedModules>test-core</sonar.skippedModules>
-        <sonar.exclusions>src/main/java/org/touchbit/shields4j/jupiter/**</sonar.exclusions>
+        <sonar.exclusions>**/src/main/java/org/touchbit/shields4j/jupiter/**</sonar.exclusions>
         <sonar.coverage.exclusions>src/main/java/org/touchbit/shields4j/jupiter/**</sonar.coverage.exclusions>
         <sonar.cpd.exclusions/>
-
-        <junit.jupiter.version>5.3.1</junit.jupiter.version>
+        <sonar.pullrequest.provider>github</sonar.pullrequest.provider>
+        <sonar.pullrequest.github.repository>https://github.com/touchbit/shields4j</sonar.pullrequest.github.repository>
+        <!--suppress UnresolvedMavenProperty -->
+        <sonar.login>${env.SONAR_GH_CI_TOKEN}</sonar.login>
+        <!--suppress UnresolvedMavenProperty -->
+        <sonar.pullrequest.key>${env.GITHUB_PR_NUMBER}</sonar.pullrequest.key>
+        <!--suppress UnresolvedMavenProperty -->
+        <sonar.pullrequest.branch>${env.GITHUB_HEAD_REF}</sonar.pullrequest.branch>
+        <!--suppress UnresolvedMavenProperty -->
+        <sonar.pullrequest.base>${env.GITHUB_BASE_REF}</sonar.pullrequest.base>
     </properties>
 
     <dependencies>
@@ -157,22 +162,18 @@
                     </dependencies>
                     <configuration>
                         <useSystemClassLoader>true</useSystemClassLoader>
-                        <reportsDirectory>${sonar.junit.reportPaths}</reportsDirectory>
                     </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.1</version>
+                    <version>0.8.5</version>
                     <executions>
                         <execution>
                             <id>pre-unit-test</id>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
-                            <configuration>
-                                <destFile>${sonar.jacoco.reportPaths}</destFile>
-                            </configuration>
                         </execution>
                         <execution>
                             <id>report</id>
@@ -180,10 +181,6 @@
                             <goals>
                                 <goal>report</goal>
                             </goals>
-                            <configuration>
-                                <dataFile>${sonar.jacoco.reportPaths}</dataFile>
-                                <outputDirectory>${reports.path}/jacoco</outputDirectory>
-                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
