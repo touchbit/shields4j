@@ -26,4 +26,4 @@ jobs:
         env:
           SONAR_GH_CI_TOKEN: ${{ secrets.SONAR_GH_CI_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn package sonar:sonar -DskipTests=true
+        run: mvn package sonar:sonar -DskipTests=true -Dsonar.login=${SONAR_GH_CI_TOKEN}
