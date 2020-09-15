@@ -4,7 +4,7 @@ Shields4j |Master| |MavenCentral| |DocumentationStatus| |AlertStatus| |Coverage|
 .. |Master| image:: https://github.com/touchbit/shields4j/workflows/Master/badge.svg?style=plastic
     :target: https://github.com/touchbit/shields4j/actions?query=workflow%3Amaster
 
-.. |MavenCentral| image:: https://maven-badges.herokuapp.com/maven-central/org.touchbit.shields4j/shields4j-parent/badge.svg?style=plastic
+.. |MavenCentral| image:: https://maven-badges.herokuapp.com/maven-central/org.touchbit.shields4j/shields4j-parent/badge.svg
     :target: https://mvnrepository.com/artifact/org.touchbit.shields4j
 
 .. |DocumentationStatus| image:: https://readthedocs.org/projects/shields4j/badge/?version=master
